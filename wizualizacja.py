@@ -14,7 +14,7 @@ data = pandas.read_csv("diabetes.csv")
 data2 = pandas.read_csv("Iraq_dataset.csv")
 
 #data.drop(['SkinThickness', 'Insulin'], axis = 1, inplace = True)
-data2.drop(['ID','No_Pation', 'CLASS'], axis = 1, inplace = True)
+data2.drop(['ID','No_Pation', 'CLASS', 'Gender'], axis = 1, inplace = True)
 
 #data.plot(x= 'Insulin', y= 'BMI', kind = "scatter")
 #plt.show()
