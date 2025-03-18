@@ -1,5 +1,6 @@
 import csv
 import pandas
+import numpy
 import matplotlib.pyplot as plt
 
 # with open("diabetes.csv", 'r') as csv_file:
@@ -8,9 +9,12 @@ import matplotlib.pyplot as plt
 #     for line in csv_reader:
 #         print(line)
 
-data = pandas.read_csv("diabetes.csv").to_numpy()
+#data = pandas.read_csv("diabetes.csv").to_numpy()
+data = pandas.read_csv("diabetes.csv")
+data2 = pandas.read_csv("Iraq_dataset.csv")
 
 #data.drop(['SkinThickness', 'Insulin'], axis = 1, inplace = True)
+data2.drop(['ID','No_Pation', 'CLASS'], axis = 1, inplace = True)
 
 #data.plot(x= 'Insulin', y= 'BMI', kind = "scatter")
 #plt.show()
@@ -21,7 +25,8 @@ data = pandas.read_csv("diabetes.csv").to_numpy()
 #plt.scatter(matrix1,matrix2)
 #plt.show()
 
-#bail = pandas.plotting.scatter_matrix(data, figsize=(9, 9), grid= True)
+#pandas.plotting.scatter_matrix(data, figsize=(9, 9), grid= True)
+pandas.plotting.scatter_matrix(data2, figsize=(9, 9), grid= True)
 #plt.show()
 
 # matrix1 = numpy.array(data[:,0])
@@ -44,5 +49,8 @@ data = pandas.read_csv("diabetes.csv").to_numpy()
 # axs[1, 1].set_title('Axis [1, 1]')
 
 
-data.plot(x= 'Insulin', y= 'BMI', kind = "scatter")
 plt.show()
+
+
+
+
