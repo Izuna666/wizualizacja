@@ -29,12 +29,52 @@ Data_2 = Data[Data['CLASS'] == 2].sample(n=53, ignore_index= False)
 
 # now we plot histograms for chosen data groups to see corelations and so on
 
-plt.hist(Data_0['BMI'], label= 'Healthy', bins= 12, alpha= 0.7)
-plt.hist(Data_1['BMI'], label= 'Maybe', bins= 12, alpha= 0.7)
-plt.hist(Data_2['BMI'], label= 'Diabetes', bins= 12, alpha= 0.7)
+# plt.hist(Data_0['BMI'], label= 'Healthy', bins= 12, alpha= 0.7)
+# plt.hist(Data_1['BMI'], label= 'Maybe', bins= 12, alpha= 0.7)
+# plt.hist(Data_2['BMI'], label= 'Diabetes', bins= 12, alpha= 0.7)
 
-plt.xlabel("BMI")
-plt.ylabel("Patient")
+# plt.xlabel("BMI")
+# plt.ylabel("Patient")
 
-plt.legend()
+# plt.legend()
+# plt.show()
+
+# Create a figure and axes
+fig, axes = plt.subplots(2, 2, figsize=(10, 8))
+
+# Plot histograms
+axes[0, 0].hist(Data_0['BMI'], label= 'Healthy', bins= 12, alpha= 0.7)
+axes[0, 0].hist(Data_1['BMI'], label= 'Maybe', bins= 12, alpha= 0.7)
+axes[0, 0].hist(Data_2['BMI'], label= 'Diabetes', bins= 12, alpha= 0.7)
+axes[0, 0].legend()
+axes[0, 0].set_xlabel("BMI")
+axes[0, 0].set_ylabel("Patient")
+axes[0, 0].set_title("BMI Histogram")
+
+axes[0, 1].hist(Data_0['AGE'], label= 'Healthy', bins= 12, alpha= 0.7)
+axes[0, 1].hist(Data_1['AGE'], label= 'Maybe', bins= 12, alpha= 0.7)
+axes[0, 1].hist(Data_2['AGE'], label= 'Diabetes', bins= 12, alpha= 0.7)
+axes[0, 1].legend()
+axes[0, 1].set_xlabel("AGE")
+axes[0, 1].set_ylabel("Patient")
+axes[0, 1].set_title("AGE Histogram")
+
+axes[1, 0].hist(Data_0['Chol'], label= 'Healthy', bins= 12, alpha= 0.7)
+axes[1, 0].hist(Data_1['Chol'], label= 'Maybe', bins= 12, alpha= 0.7)
+axes[1, 0].hist(Data_2['Chol'], label= 'Diabetes', bins= 12, alpha= 0.7)
+axes[1, 0].legend()
+axes[1, 0].set_xlabel("Chol")
+axes[1, 0].set_ylabel("Patient")
+axes[1, 0].set_title("Chol Histogram")
+
+axes[1, 1].hist(Data_0['HDL'], label= 'Healthy', bins= 12, alpha= 0.7)
+axes[1, 1].hist(Data_1['HDL'], label= 'Maybe', bins= 12, alpha= 0.7)
+axes[1, 1].hist(Data_2['HDL'], label= 'Diabetes', bins= 12, alpha= 0.7)
+axes[1, 1].legend()
+axes[1, 1].set_xlabel("HDL")
+axes[1, 1].set_ylabel("Patient")
+axes[1, 1].set_title("HDL Histogram")
+
+# Adjust layout for better appearance
+plt.tight_layout()
 plt.show()
